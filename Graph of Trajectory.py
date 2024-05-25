@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 
 # Reads the video using VideoCapture
-cap = cv2.VideoCapture('Video.mp4')
+cap = cv2.VideoCapture('Pencil6.mp4')
 
 # Retrieves the width and height of the frames captured by the video source 
 frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))

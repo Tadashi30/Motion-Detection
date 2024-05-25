@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # Reads the video using VideoCapture
-cap = cv2.VideoCapture('V.mp4')
+cap = cv2.VideoCapture('Pencil6.mp4')
 
 # Retrieves the width and height of the frames captured by the video source 
 frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
@@ -55,6 +55,11 @@ while cap.isOpened():
             for i in range(1, len(centroid_path)):
              cv2.line(frame1, centroid_path[i - 1], centroid_path[i], (0, 255, 0), 8)
              
+                        # Display the centroid coordinates
+            coords_text = f'({centroid_x}, {centroid_y})'
+            cv2.putText(frame1, coords_text, (centroid_x + 10, centroid_y + 10),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
+
             # Calculate the percentage of completion of the video
     frame_number = int(cap.get(cv2.CAP_PROP_POS_FRAMES))
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
